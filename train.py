@@ -9,9 +9,9 @@ from neural_network import NeuralNetwork
 
 
 def load_data(reader):
-    print("all words: {}".format(
+    """print("all words: {}".format(
         len(reader.words_emb))
-    )
+    )"""
     train_data = []
     words_packet = reader.next_packet()
     while words_packet:
@@ -36,9 +36,9 @@ def train_network(network, optimizer, criterion, epochs):
             loss.backward()
             optimizer.step()
 
-            print('Train Epoch: {} [{}/{} ({:.0f}%)] Loss: {}'.format(
+            """print('Train Epoch: {} [{}/{} ({:.0f}%)] Loss: {}'.format(
                 epoch + 1, batch_idx * len(X), len(train_loader.dataset),
-                100. * batch_idx / len(train_loader), loss.data))
+                100. * batch_idx / len(train_loader), loss.data))"""
 
 
 parser = argparse.ArgumentParser()
@@ -48,9 +48,9 @@ args = parser.parse_args()
 input_dir = args.input_dir
 reader = text_reader.TextReader(input_dir)
 train_loader = load_data(reader)
-for X, y in train_loader:
+"""for X, y in train_loader:
     print(f"Value of X : {X.shape}")
-    print(f"Value of y: {y.shape}")
+    print(f"Value of y: {y.shape}")"""
 
 net = NeuralNetwork().to('cpu')
 print(net)
