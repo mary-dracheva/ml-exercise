@@ -30,7 +30,7 @@ def generate_text(len_text, init_text, reader, network):
         prefixes = words[-2:]
         word = generate_word(reader, prefixes, network)
         words.append(word)
-        print("> {}".format(word))
+        # print("> {}".format(word))
 
     print("Generated text: {}".format(' '.join(words)))
 
