@@ -36,7 +36,7 @@ class TextReader:
         packet = []
         if self.index <= len(self.words_emb) - 3:
             window = self.words_emb[self.index:self.index + 3]
-            print("prefix: {}, {} \tpredition: {}".format(window[0][0], window[1][0], window[-1][0]))
+            # print("prefix: {}, {} \tpredition: {}".format(window[0][0], window[1][0], window[-1][0]))
             packet = list(map(lambda word: word[1], window))
             self.index += 1
         return packet
@@ -48,7 +48,7 @@ class TextReader:
             lambda w_emb: w_emb[0] == word, self.words_emb))
         if word_embs:
             vector = word_embs[0][1]
-        print("for '{}' was found vector: {}".format(word, numpy.mean(vector)))
+        # print("for '{}' was found vector: {}".format(word, numpy.mean(vector)))
         return vector
 
     def nearest_word(self, vector):
